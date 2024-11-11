@@ -42,10 +42,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.session</groupId>
-            <artifactId>spring-session-core</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -68,26 +64,45 @@
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
+                <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>se.michaelthelin.spotify</groupId>
+            <artifactId>spotify-web-api-java</artifactId>
+            <version>8.4.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.thelinmichael</groupId>
+            <artifactId>spotify-web-api-java</artifactId>
+            <version>master-6.5.4-g231b45c-1</version>
+        </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
             </plugin>
         </plugins>
     </build>
