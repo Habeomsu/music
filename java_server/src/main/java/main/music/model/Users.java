@@ -2,7 +2,9 @@ package main.music.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.boot.autoconfigure.graphql.ConditionalOnGraphQlSchema;
 import org.springframework.format.annotation.DateTimeFormat;
 

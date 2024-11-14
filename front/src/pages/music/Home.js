@@ -14,7 +14,7 @@ const Home = ({ isLoggedIn }) => {
       alert('로그인해주세요');
     } else {
       try {
-        const response = await axios.get('http://localhost:8080/search', {
+        const response = await axios.get('/api/search', {
           params: { trackName },
           withCredentials: true,
         });

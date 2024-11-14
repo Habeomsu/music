@@ -22,6 +22,7 @@ import java.util.Optional;
 
 @Slf4j
 @RestController
+@RequestMapping("/api")
 public class AuthController {
     @Autowired
     private UserService userService;
@@ -51,8 +52,7 @@ public class AuthController {
         // 세션 객체 얻기
         HttpSession session = request.getSession(false);
         session.setAttribute("user", foundUser);  // 세션에 사용자 정보 저장
-
-        log.info("User logged in. Session ID: {}, User: {}", session.getId(), foundUser);
+        log.info(session.getId());
         return ResponseEntity.ok("User logged in successfully!");
     }
 

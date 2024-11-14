@@ -8,7 +8,7 @@ const JoinForm = () => {
   const navigate = useNavigate();
   const handleRegister = async () => {
     try {
-      await axios.post('http://localhost:8080/register', {
+      await axios.post('/api/register', {
         username,
         password,
       });

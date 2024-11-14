@@ -9,7 +9,7 @@ function LoginForm({ setIsLoggedIn }) {
   const handleLogin = async () => {
     try {
       await axios.post(
-        'http://localhost:8080/login',
+        '/api/login',
         { username, password },
         { withCredentials: true },
       );

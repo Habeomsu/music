@@ -16,10 +16,10 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @Configuration
 @EnableRedisHttpSession // Redis 세션 활성화
 public class RedisSessionConfig {
-    @Value("localhost")
+    @Value("${spring.data.redis.host}")
     private String host;
 
-    @Value("6379")
+    @Value("${spring.data.redis.port}")
     private int port;
 
     @Bean

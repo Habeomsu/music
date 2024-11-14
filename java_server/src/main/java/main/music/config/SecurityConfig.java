@@ -47,8 +47,8 @@ public class SecurityConfig {
         return http
 
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/login","/register").permitAll()
-                        .requestMatchers("/logout").authenticated()
+                        .requestMatchers("/api/login","/api/register").permitAll()
+                        .requestMatchers("/api/logout").authenticated()
                         .anyRequest().authenticated())
                 .csrf(csrf->csrf.disable())
                 .exceptionHandling(exceptionHandling -> exceptionHandling
@@ -59,7 +59,7 @@ public class SecurityConfig {
                 )
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .logout(logout -> logout
-                        .logoutUrl("/logout") // 로그아웃 URL 설정
+                        .logoutUrl("/api/logout") // 로그아웃 URL 설정
                         .logoutSuccessHandler((request, response, authentication) -> {
                             if (authentication != null) {
                                 // 인증된 사용자가 로그아웃 요청을 할 때 세션을 무효화
@@ -84,7 +84,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.addAllowedOrigin("http://localhost:3000"); // 리액트 서버 URL
+        configuration.addAllowedOrigin("http://localhost:3000");
         configuration.addAllowedMethod("GET");
         configuration.addAllowedMethod("POST");
         configuration.addAllowedMethod("PUT");

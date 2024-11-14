@@ -9,7 +9,7 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
   const handleLogout = async () => {
     try {
       const response = await axios.post(
-        'http://localhost:8080/logout',
+        '/api/logout',
         {},
         { withCredentials: true },
       );
